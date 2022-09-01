@@ -57,20 +57,28 @@ function getPackage() {
 
 
 function drawPackages() {
-  let packageButtons = document.getElementById('package-buttons')
+  debugger
+  console.log('drawing pckgs');
+  let packageRow = document.getElementById('packageRow')
+  console.log(packageRow);
   let template = ''
-
   packages.forEach(package => {
-
-
-
+    template += `
+  <div class="col-4">
+        <div class="pckge text-white">
+          <p>PRIORTIY: ${package.priorityLevel}</p>
+          <P>FRAGILE: $${package.isFragile}</P>
+          <P>WEIGHT: ${package.weight}</P>
+          <p>To: ${package.to}</p>
+          <p>Tracking #: ${package.trackingNumber}</p>
+        </div>
+      </div>
+`
   })
-
-
+  console.log(template)
+  // need to draw each package
   // @ts-ignore
-  packageButtons.innerHTML = template
-
-
+  packageRow.innerHTML = template
 }
 
 
